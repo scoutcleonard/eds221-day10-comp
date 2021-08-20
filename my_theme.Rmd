@@ -1,0 +1,40 @@
+---
+title: "EDS 221 Day 10: Comp 1: My ggplot theme"
+author: "Scout Leonard"
+date: "8/20/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(palmerpenguins)
+library(yarn)
+
+library(sarah)
+```
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  theme(axis.title = element_text(color = "salmon"),
+        panel.background = element_rect(fill = "yellow"),
+        plot.background = element_rect(fill = "red"),
+        panel.grid.major.x = element_line(color = "green"),
+        panel.grid.major.y = element_line(color = "navy"))
+```
+- Copy the theme and paste it in an R script in the package you wish to add the theme to. 
+- Add a roxygen skeleton
+- use dev_tools::document() and install and restart to update your package with the new function
+
+- add my package to my library to use the yarn function
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point() +
+  theme_wacky()
+```
+
+
+
